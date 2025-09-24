@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,7 @@
             color: #222;
         }
         header {
-            background: url("images\ \(22\).jpeg") center/cover no-repeat;
+            background:url("images\ \(22\).jpeg") center center/cover no-repeat;
             color: #fff;
             padding: 80px 0 120px 0;
             text-align: center;
@@ -34,13 +33,6 @@
             margin-right: 40px;
         }
        
-        .search-form {
-            flex: 1 1 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
         .navlinks {
             list-style: none;
             display: flex;
@@ -107,20 +99,7 @@
             color: #ff6f3c;
         }
 
-        .search-form{
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .search-form button{
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgb(93, 89, 89);
-            color: #fff;
-            border-radius: 10px;
-            padding: 4px;
-        }
+        
         section {
             max-width: 1100px;
             margin: 40px auto;
@@ -220,7 +199,7 @@
             background: #ff914d;
         }
         footer {
-            background: #222;
+            background: #676262;
             color: #fff;
             text-align: center;
             padding: 25px 0 10px 0;
@@ -345,20 +324,7 @@
             }
         }
 
-        @media (max-width: 900px) {
-            body, html {
-                width: 100vw;
-                overflow-x: hidden;
-            }
-            section {
-                width: 100vw;
-                max-width: 100vw;
-                border-radius: 0;
-                box-sizing: border-box;
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
+        
       
         @media (max-width: 700px) {
             .header-content {
@@ -398,7 +364,7 @@
             <a href="#services"><button class="cta-btn">View Service</button></a>
         </div>
     </header>
-        <section id="services" class="fade-in-up">
+    <section id="services" class="fade-in-up">
         <h2 class="section-title">Our Services</h2>
         <div class="services">
             <div class="service">
@@ -422,9 +388,7 @@
         <div class="about">
             <img src="think-man.png" alt="Rage Media">
             <div class="about-text">
-                <marquee behavior="" direction="fade-in-up">
-                    <p>Rage Media, we're bold and versatile, we work with various industries, <br> not just focusing on one. We combine technolgy and creativity to <br> make ideas come to live. We are passion about seeing our clients <br> businesses and brands grow to the top level. We also tell stories in a unquie way <br> which leads us to the advertising section, were we handle business publicity, <br> and help brands achieve their goals in having a successful business </p>
-                </marquee>
+                <p>Rage Media, we're bold and versatile, we work with various industries, <br> not just focusing on one. We combine technology and creativity to <br> make ideas come to life. We are passionate about seeing our clients <br> businesses and brands grow to the top level. We also tell stories in a unique way <br> which leads us to the advertising section, where we handle business publicity, <br> and help brands achieve their goals in having a successful business.</p>
             </div>
         </div>
     </section>
@@ -478,48 +442,28 @@
             alert(welcomeMessage + " Glad to have you here, " + name + "!");
         }
 
+    document.addEventListener('DOMContentLoaded', function() {
        
-        document.addEventListener('DOMContentLoaded', function() {
-           
-            const brand = document.querySelector('.brandname');
-            if (brand) {
-                brand.style.color = "#fff";
-                brand.style.hover.color ="#ff6f3c";
-                brand.innerText = companyName;
-            }
-
-           
-            const headerTitle = document.querySelector('.header-content h1');
-            if (headerTitle) {
-                headerTitle.innerHTML = '<span style="color:#ff6f3c">Welcome to ' + companyName + '!</span>';
-            }
-
-           
-            const ctaBtn = document.querySelector('.cta-btn');
-            if (ctaBtn) {
-                ctaBtn.addEventListener('click', function() {
-                    greetUser('Visitor');
-                });
-            }
-
-            
-            const searchForm = document.querySelector('.search-form');
-            if (searchForm) {
-                searchForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const searchInput = searchForm.querySelector('input[type="search"]');
-                    if (searchInput && searchInput.value.trim() !== "") {
-                        alert('Searching for: ' + searchInput.value);
-                        searchInput.style.color = "red";
-                        setTimeout(() => { searchInput.style.color = ""; }, 1000);
-                    } else {
-                        alert('Please enter a search term.');
-                    }
-                });
-            }
-        });
-
-        
+        const brand = document.querySelector('.brandname');
+        if (brand) {
+            brand.style.color = "#fff";
+            brand.innerText = companyName;
+        }
+    
+       
+        const headerTitle = document.querySelector('.header-content h1');
+        if (headerTitle) {
+            headerTitle.innerHTML = '<span style="color:#ff6f3c">Welcome to ' + companyName + '!</span>';
+        }
+    
+       
+        const ctaBtn = document.querySelector('.cta-btn');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', function() {
+                greetUser('Visitor');
+            });
+        }
+    
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 const href = this.getAttribute('href');
@@ -561,8 +505,7 @@
                 contactForm.reset();
             });
         }
+    }); 
     </script>
-</body>
-</html>
 </body>
 </html>
